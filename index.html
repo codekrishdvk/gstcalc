@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beverage Tax Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Beverage Tax Calculator</h1>
+
+      <label for="amount">Enter Amount (₹):</label>
+      <input type="number" id="amount" placeholder="Enter total price" />
+
+      <label for="beverage-type">Select Beverage Type:</label>
+      <select id="beverage-type" onchange="updateFields()">
+        <option value="gas">Gas-Filled Juice</option>
+        <option value="juice">Normal Juice</option>
+        <option value="water">Water</option>
+      </select>
+
+      <div class="button-container">
+        <button onclick="calculate()">&#x1F4C8; Calculate</button>
+        <button onclick="refresh()">&#x21BB; Refresh</button>
+      </div>
+
+      <div id="results" style="display: none">
+        <h2>Results</h2>
+        <table id="resultsTable">
+          <tr>
+            <th>Description</th>
+            <th>Percentage (%)</th>
+            <th>Amount (₹)</th>
+          </tr>
+          <tr>
+            <td>Original Price</td>
+            <td>N/A</td>
+            <td id="originalPrice"></td>
+          </tr>
+          <tr id="sgstRow">
+            <td>SGST</td>
+            <td id="sgstPercentage"></td>
+            <td id="sgst"></td>
+          </tr>
+          <tr id="cgstRow">
+            <td>CGST</td>
+            <td id="cgstPercentage"></td>
+            <td id="cgst"></td>
+          </tr>
+          <tr id="cessRow">
+            <td>Cess</td>
+            <td id="cessPercentage"></td>
+            <td id="cess"></td>
+          </tr>
+          <tr>
+            <td><strong>Total Price</strong></td>
+            <td id="totalPercentage"></td>
+            <td id="totalPrice"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
